@@ -6,6 +6,11 @@ import dlib
 
 
 class VisualProcessor:
+    # gets user input and creates new directory
+    # of that name, then opens camera and takes
+    # 30 photos and writes to new directory, these
+    # photos can be found in 'Dataset' and are used for
+    # facial recognition
     def collect_dataset(self):
         name = input("what is your name?")
         path = "C:\\Users\\Admin\\PycharmProjects\\Therapy-bot\\Visual\\Dataset"
