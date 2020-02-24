@@ -2,6 +2,7 @@ import kivy
 from kivy import Config
 from kivy.app import App
 from kivy.uix.label import Label
+from kivy.uix.image import Image
 
 
 # this class builds the GUI
@@ -13,7 +14,7 @@ class BotScreen(App):
 
     # build components
     def build(self):
-        return Label(text="Hello Lucy!")
+        return Label(text="Hello Dom!")
+        #return Image(source='Res/face.JPG')
 
 
-BotScreen().run()
