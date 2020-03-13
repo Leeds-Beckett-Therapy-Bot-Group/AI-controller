@@ -1,20 +1,24 @@
 import kivy
-from kivy import Config
 from kivy.app import App
-from kivy.uix.label import Label
-from kivy.uix.image import Image
+from kivy.uix.widget import Widget
+from kivy.graphics import Rectangle, Color
+from kivy.config import Config
+
+Config.set('graphics', 'width', '720')
+Config.set('graphics', 'height', '720')
 
 
-# this class builds the GUI
+class BackgroundScreen(Widget):
+    def __init__(self, **kwargs):
+        super(BackgroundScreen, self).__init__(**kwargs)
 
-class BotScreen(App):
-    # set window size
-    Config.set('graphics', 'width', '720')
-    Config.set('graphics', 'height', '720')
+        with self.canvas:
+            Color(1, 0, 0, 1)
 
-    # build components
+            self.rect = Rectangle(pos=self.pos, size=self.size,
+                                  source='Res/eyes-closed-left.png',)
+
+
+class Psycube(App):
     def build(self):
-        return Label(text="Hello Dom!")
-        #return Image(source='Res/face.JPG')
-
-
+        return BackgroundScreen()
